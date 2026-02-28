@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-const UNDER_CONSTRUCTION = true;
+const UNDER_CONSTRUCTION = false;
 
 function UnderConstruction() {
   const [time, setTime] = useState({ days: 42, hours: 17, minutes: 33, seconds: 58 });
@@ -49,7 +49,7 @@ function UnderConstruction() {
           Under <span style={{ color: "#2563EB" }}>Construction</span>
         </h1>
         <p style={{ color: "#888", fontSize: "1rem", maxWidth: "420px", lineHeight: 1.8, margin: "0 auto 3rem" }}>
-          I'm working hard to build something amazing. Launching Soon...
+          Something Amazing Launching Soon...
         </p>
 
         {/* Countdown */}

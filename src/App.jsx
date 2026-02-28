@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-const UNDER_CONSTRUCTION = window.location.hostname !== "localhost";
+const UNDER_CONSTRUCTION = false;
 
 function UnderConstruction() {
   const [time, setTime] = useState({ days: 42, hours: 17, minutes: 33, seconds: 58 });

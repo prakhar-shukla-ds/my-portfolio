@@ -1,22 +1,18 @@
 import { useState, useEffect, useRef } from "react";
 
 const UNDER_CONSTRUCTION = window.location.hostname !== "localhost";
-const LAUNCH_DATE = new Date(new Date().setMonth(new Date().getMonth() + 2));
 
 function UnderConstruction() {
-  const calcTime = () => {
-    const diff = LAUNCH_DATE - new Date();
-    if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    return {
-      days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((diff / (1000 * 60)) % 60),
-      seconds: Math.floor((diff / 1000) % 60),
-    };
-  };
-  const [time, setTime] = useState(calcTime());
+  const [time, setTime] = useState({ days: 42, hours: 17, minutes: 33, seconds: 58 });
   useEffect(() => {
-    const t = setInterval(() => setTime(calcTime()), 1000);
+    const t = setInterval(() => {
+      setTime({
+        days: Math.floor(Math.random() * 99),
+        hours: Math.floor(Math.random() * 23),
+        minutes: Math.floor(Math.random() * 59),
+        seconds: Math.floor(Math.random() * 59),
+      });
+    }, 80);
     return () => clearInterval(t);
   }, []);
 
@@ -32,7 +28,6 @@ function UnderConstruction() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        @keyframes pulse { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
         @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
       `}</style>
 
@@ -46,12 +41,15 @@ function UnderConstruction() {
       }} />
 
       <div style={{ animation: "fadeUp 0.8s ease both" }}>
+        <p style={{ color: "#2563EB", fontWeight: 800, fontSize: "clamp(2.5rem, 6vw, 4rem)", letterSpacing: "0.05em", marginBottom: "2rem" }}>
+          Prakhar <span style={{ color: "#fff" }}>Shukla's</span> Portfolio
+        </p>
         <div style={{ fontSize: "4rem", marginBottom: "1.5rem" }}>🚧</div>
         <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 800, marginBottom: "0.75rem" }}>
           Under <span style={{ color: "#2563EB" }}>Construction</span>
         </h1>
         <p style={{ color: "#888", fontSize: "1rem", maxWidth: "420px", lineHeight: 1.8, margin: "0 auto 3rem" }}>
-          I'm working hard to build something amazing. Launching in:
+          I'm working hard to build something amazing. Launching Soon...
         </p>
 
         {/* Countdown */}
@@ -59,8 +57,8 @@ function UnderConstruction() {
           {[
             { label: "Days", value: time.days },
             { label: "Hours", value: time.hours },
-            { label: "Minutes", value: time.minutes },
-            { label: "Seconds", value: time.seconds },
+            { label: "Mins", value: time.minutes },
+            { label: "Secs", value: time.seconds },
           ].map((item, i) => (
             <div key={item.label} style={{
               background: "#111",
@@ -232,7 +230,7 @@ export default function Portfolio() {
         {/* LEFT */}
         <div style={{ flex: 1, animation: "fadeUp 0.8s ease both" }}>
           <p style={{ fontSize: "1rem", color: "#aaa", marginBottom: "0.4rem", fontWeight: 300 }}>Hi I am</p>
-          <h1 style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 700, marginBottom: "0.4rem" }}>Your Name</h1>
+          <h1 style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", fontWeight: 700, marginBottom: "0.4rem" }}>Prakhar Shukla</h1>
           <h2 style={{
             fontSize: "clamp(2rem, 4.5vw, 3.2rem)", fontWeight: 800,
             color: "#2563EB", marginBottom: "1.5rem", lineHeight: 1.15, minHeight: "1.2em",
@@ -291,7 +289,10 @@ export default function Portfolio() {
             boxShadow: "0 0 60px rgba(37, 99, 235, 0.15)",
             overflow: "hidden",
           }}>
-            <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="4" fill="#2563EB"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#2563EB" strokeWidth="2" strokeLinecap="round"/></svg>
+            <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="8" r="4" fill="#2563EB"/>
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#2563EB" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
             <p style={{ color: "#555", fontSize: "0.8rem", marginTop: "0.75rem" }}>Add your photo here</p>
           </div>
         </div>
@@ -417,7 +418,7 @@ export default function Portfolio() {
         padding: "1.5rem", textAlign: "center",
         fontSize: "0.8rem", color: "#555",
       }}>
-        © {new Date().getFullYear()} Your Name · Built with React
+        © {new Date().getFullYear()} Prakhar Shukla · Built with React
       </footer>
     </div>
   );

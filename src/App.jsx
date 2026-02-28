@@ -140,7 +140,7 @@ export default function Portfolio() {
   const [scrollY, setScrollY] = useState(0);
   const [active, setActive] = useState("Home");
   const [typed, setTyped] = useState("");
-  const fullText = "Data Analytics Student";
+  const fullText = "Data Analyst";
 
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY);

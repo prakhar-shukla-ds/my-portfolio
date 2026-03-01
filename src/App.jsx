@@ -20,7 +20,7 @@ const SKILLS = [
 
 const NAV_LINKS = ["HOME", "ABOUT", "WORK", "CONTACT"];
 const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%";
-const TYPEWRITER_TEXTS = ["Data Analytics Student.", "Python Developer.", "Data Visualizer.", "Insight Hunter.", "SQL Expert."];
+const TYPEWRITER_TEXTS = ["Data Analyst.", "Python Developer.", "Data Visualizer.", "Insight Hunter.", "SQL Expert."];
 
 // Detect touch/pointer type
 const isTouchDevice = () => typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches;
@@ -372,7 +372,7 @@ export default function Portfolio() {
               {typed}<span style={{ animation:"blink 1s infinite", color:"#8b5cf6" }}>|</span>
             </h2>
             <p style={{ color: dark?"#94a3b8":"#64748b", lineHeight:1.8, fontSize:"clamp(0.85rem, 2.5vw, 0.95rem)", maxWidth:"480px", marginBottom:"2.5rem", animation:"pageLoad 1s 0.3s ease both", opacity:0, animationFillMode:"forwards" }}>
-              A passionate data analytics student with a love for uncovering insights hidden in complex datasets. I build dashboards, predictive models, and data pipelines that turn raw numbers into clear decisions.
+              A passionate data analyst with a love for uncovering insights hidden in complex datasets. I build dashboards, predictive models, and data pipelines that turn raw numbers into clear decisions.
             </p>
             <div className="hero-text-cta" style={{ display:"flex", animation:"pageLoad 1s 0.5s ease both", opacity:0, animationFillMode:"forwards" }}>
               <button onClick={() => scrollTo("contact")} style={{ background:"linear-gradient(135deg, #8b5cf6, #06b6d4)", color:"#fff", border:"none", borderRadius:"30px", padding:"0.9rem 2.5rem", fontFamily:"'Outfit',sans-serif", fontWeight:600, fontSize:"0.95rem", boxShadow:"0 8px 30px rgba(139,92,246,0.4)", transition:"all 0.3s", WebkitTapHighlightColor:"transparent" }}
@@ -412,7 +412,7 @@ export default function Portfolio() {
             <div style={{ flex:1, height:"1px", background:"linear-gradient(to left, transparent, #8b5cf644)" }} />
           </div>
           <p style={{ color: dark?"#94a3b8":"#64748b", lineHeight:2, fontSize:"clamp(0.88rem, 2.5vw, 1rem)", maxWidth:"700px", margin:"0 auto 3rem" }}>
-            I'm a Data Analytics student passionate about transforming raw data into meaningful stories. With expertise in Python, SQL, and visualization tools like Tableau and Power BI, I love tackling real-world datasets and extracting insights that drive decisions.
+            I'm a Data Analyst passionate about transforming raw data into meaningful stories. With expertise in Python, SQL, and visualization tools like Tableau and Power BI, I love tackling real-world datasets and extracting insights that drive decisions.
           </p>
           <div className="skills-grid" style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"0 3rem", textAlign:"left", marginBottom:"3rem" }}>
             {SKILLS.map(skill => <SkillBar key={skill.name} name={skill.name} level={skill.level} dark={dark} />)}
